@@ -1,0 +1,7 @@
+hal_client_domain(mediacodec, hal_audio)
+
+# ViPER4Android FX
+get_prop(audioserver, vendor_audio_prop) # If Google or MTK device skip line
+
+allow audioserver unlabeled:file { read write open getattr };
+allow hal_audio_default hal_audio_default:process { execmem };
