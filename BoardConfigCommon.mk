@@ -59,8 +59,8 @@ BOARD_KERNEL_PAGESIZE    := 4096
 
 BOARD_KERNEL_CMDLINE := \
     disable_dma32=on \
-    mtdoops.fingerprint=$(LINEAGE_VERSION) \
-    swinfo.fingerprint=$(LINEAGE_VERSION)
+    mtdoops.fingerprint=$(VOLTAGE_VERSION) \
+    swinfo.fingerprint=$(VOLTAGE_VERSION)
 
 BOARD_BOOTCONFIG := \
     androidboot.console=ttyMSM0 \
@@ -151,7 +151,7 @@ $(foreach p, $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST))
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE := false
-include vendor/lineage/config/BoardConfigReservedSize.mk
+include vendor/voltage/config/BoardConfigReservedSize.mk
 
 # Platform
 TARGET_BOARD_PLATFORM := kalama
